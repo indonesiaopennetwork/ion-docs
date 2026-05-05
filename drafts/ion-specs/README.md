@@ -169,8 +169,8 @@ A worked example, on `Offer.offerAttributes`:
   "returnPolicy":       "ion://policy/return/standard/7d-sellerpays",
 
   "participantExtensions": {
-    "@context": "https://schema.tokopedia.com/ion/v1/context.jsonld",
-    "@type":    "tokopedia:OfferExtensions",
+    "@context": "https://schema.todia.com/ion/v1/context.jsonld",
+    "@type":    "todia:OfferExtensions",
     "loyaltyTier":     "GOLD",
     "internalOfferId": "tk-99821"
   },
