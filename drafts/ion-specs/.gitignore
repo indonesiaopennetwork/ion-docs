@@ -1,0 +1,22 @@
+# Generated registries (rebuilt by tools/)
+policies/registry.json
+errors/registry.json
+annexes/categories/*.generated.json
+
+# Tooling artifacts
+__pycache__/
+*.pyc
+.venv/
+venv/
+.DS_Store
+
+# Editor scratch
+.vscode/
+.idea/
+*.swp
+*~
+
+# Build/dist artifacts
+dist/
+build/
+node_modules/
