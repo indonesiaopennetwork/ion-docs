@@ -1,20 +1,20 @@
 ## Introduction
-This folder contains files required to test the IONAttributes design proposal. This document describes the issue, the proposed solution as well as extracted json messages with annotation. 
+This folder contains files required to test the IONAttributes design proposal. This document describes the intent, the proposed solution as well as extracted json messages with annotation. 
 
 ## Requirement
 The version 2 of Beckn is designed to be extensible through context.jsonld and corresponding attribute.yaml file. In v2, beckn.yaml file only contains the very basic structures and everything else is extensible through the Attributes class which allows plugging in of a context and type. So beckn.yaml contains very few json-schema validation rules. All the others have to be part of the attributes.yaml file found along with the context.jsonld of the particular extension object (e.g. resourceAttributes etc)
 
-One problem with this approach is that a NP can actually point the context.jsonld to a custom location that can potentially skip all validation. It also skips validation at the other counter party NP. This is a fundamental problem that cannot be solved if the validation comes along with json packet. The only way validations will be guaranteed to work is when they are configured at the ONIX of the NP with rules either stored locally or fetched from network location.
+One problem with this approach is that a NP can actually point the context.jsonld to a custom location(accidentally or otherwise) that can potentially skip all validation. It also skips validation at the other counter party NP. This is a fundamental problem that cannot be solved if the validation comes along with json packet. The only way validations will be guaranteed to work is when they are configured at the ONIX of the NP with rules either stored locally or fetched from konwn network location.
 
 Having said that, this exercise wanted to do the following.
-1. Atleast ensure that the base extension objects (resourceAttributes, offerAttributes, participantAttributes) etc is not easily replaced by a dummy. 
+1. Atleast ensure that the base extension objects (resourceAttributes, offerAttributes, participantAttributes) etc is not easily replaced. 
 2. Restrict NP from adding additional attributes to these core extension objects.
-3. Provide the NPs ability to add additional attributes at one level below the core object. They should have the ability to extend it the way they want.
+3. Provide the NPs the ability to add additional attributes at one level below the core object. They should have the ability to extend it the way they want.
 
 ## Design
-1. Limit the context of the Attributes object in Beckn.yaml to only refer to ION schema. That way the core object cannot be anything else. In this example we have defined a core object called TradeResource that goes into the resourceAttributes field of the Resource object. This cannot come from any other location. The pattern clause is added to the @context below to achieve it.
+1. Limit the context of the Attributes object in Beckn.yaml to only refer to ION schema. That way the core object cannot be anything else. In this note we are goingt to define a core object called TradeResource that goes into the resourceAttributes field of the Resource object. This cannot come from any other location except that specified here. The pattern clause is added to the @context below to achieve it. (Ignore the beckn path which has been added as other Attributes have not been specialized yet). The same effect can probably be achieved through Rego instead of the pattern clause below. 
 
-```
+```json {4}
     Attributes:
       description: JSON-LD aware container for domain-specific attributes of an Item. MUST include @context (URI) and @type (compact or full IRI). Any additional properties are allowed and interpreted per the provided JSON-LD context.
       title: Attributes
@@ -33,15 +33,16 @@ Having said that, this exercise wanted to do the following.
       additionalProperties: true
 ```
 
-2. Define a new [IONExtraAttributes Schema](https://github.com/ion-id/ion-docs/tree/ionAttributes/drafts/ionSchema/IONExtraAttributes) which is identical to the Attributes Schema in Beckn. This allows for NP extensions. 
+2. Define a new [IONExtraAttributes Schema](https://github.com/ion-id/ion-docs/tree/ionAttributes/drafts/ionSchema/IONExtraAttributes) which is identical to the Attributes Schema in Beckn. This allows for extensions. 
 3. Make the core object [TradeResource](https://github.com/ion-id/ion-docs/tree/ionAttributes/drafts/ionSchema/ionAttributes/resourceAttributes/TradeResource) by default closed to additionalProperties.
-4. Create a field in TradeResource called extraAttributes that is of type IONExtraAttributes and allows NP specific extensions.
+4. Create a field in TradeResource called extraAttributes that is of type IONExtraAttributes and allows extensions.
 
 
 
 ## Postman collections
 
 The postman collection is present in this folder. The json message content is listed below for easy reference.
+
 
 ### Baseline Beckn Local Retail sample message
 - This is the baseline request on which other modifications were made
