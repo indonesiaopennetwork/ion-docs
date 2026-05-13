@@ -14,7 +14,7 @@ components:
       additionalProperties: false
       x-beckn-container: resourceAttributes
       x-jsonld:
-        "@context": "https://raw.githubusercontent.com/ion-id/ion-docs/refs/heads/ionAttributes/drafts/ionSchema/ionAttributes/resourceAttributes/TradeResource/v2.1/context.jsonld"
+        "@context": "https://raw.githubusercontent.com/indonesiaopennetwork/ion-docs/refs/heads/tradeResourceAttributes/drafts/ionSchema/ionAttributes/resourceAttributes/TradeResourceAttributes/v1.0/context.jsonld"
         "@type": "rcra:TradeResource"
       properties:
         countryOfOrigin:
