@@ -379,11 +379,7 @@ This section gives sample json packets, that show the new design in action. Ther
   }
 }
 ```
-
-### Adding extra fields at the ProviderAttributes level including those not covered by Provider context
-- The providerAttributes property allows additionalProperties. So the provider can in addition to fields covered by his context also include additional key-value pairs which pass through without json-schema validation.
-- This again passes validation as this is allowed.
-
+- With more additional attributes.
 ```
 {
   "context": {
