@@ -20,9 +20,8 @@ components:
         countryOfOrigin:
           type: string
           description: ISO 3166-1 alpha-2 recommended
-          x-jsonld-id: "rcra:originCountry"
+          x-jsonld-id: "rcra:countryOfOrigin"
         participantAttributes:
-          additionalProperties: true
           properties:
             '@context':
               description: Use case specific JSON-LD context URI
