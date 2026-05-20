@@ -1,0 +1,197 @@
+{
+  "_meta": {
+    "description": "B2C Storefront — on_select. BPP resolves variant: 128GB base 18,999,000 + 256GB delta 1,500,000 = 20,499,000. Applies delivery 35,000, new-customer promo -200,000, PPN 11% on net 20,334,000 = 2,236,740. Total = 22,570,740 IDR. Consideration has no ID yet — BPP assigns it at on_init. Offer terms attached here for buyer review.",
+    "pattern": "B2C-SF",
+    "step": "on_select",
+    "sent_by": "BPP",
+    "received_by": "BAP",
+    "schemaPacks": [
+      "trade/offer/v1",
+      "trade/consideration/v1",
+      "trade/performance/v1"
+    ]
+  },
+  "context": {
+    "domain": "ion:trade",
+    "action": "on_select",
+    "version": "2.0.0",
+    "bapId": "tokobeli-consumer.ion.id",
+    "bapUri": "https://api.tokobeli.co.id/beckn",
+    "bppId": "istore-indonesia.ion.id",
+    "bppUri": "https://api.istore-indonesia.co.id/beckn",
+    "networkId": "ion.id",
+    "transactionId": "txn-b2c-ip17-20260519-0042",
+    "messageId": "msg-onsel-txn-b2c-ip17-20260519-0042",
+    "timestamp": "2026-05-19T10:15:02.000+07:00",
+    "ttl": "PT30S",
+    "location": {
+      "city": {
+        "code": "std:3171"
+      },
+      "country": {
+        "code": "IDN"
+      }
+    }
+  },
+  "message": {
+    "contract": {
+      "participants": [
+        {
+          "role": "PROVIDER",
+          "id": "PROV-ISTORE-JKT-001"
+        }
+      ],
+      "commitments": [
+        {
+          "id": "L01",
+          "status": {
+            "descriptor": {
+              "code": "DRAFT"
+            }
+          },
+          "offer": {
+            "id": "OFFER-IPHONE17-B2C-001",
+            "provider": {
+              "id": "PROV-ISTORE-JKT-001"
+            },
+            "offerAttributes": {
+              "@context": "https://schema.ion.id/trade/offer/v1/context.jsonld",
+              "@type": "ion:TradeOffer",
+              "cancellationPolicy": "ion://policy/cancel.prepacked.free",
+              "cancellationAllowedReasons": [
+                "CHANGE_OF_MIND",
+                "WRONG_ITEM_ORDERED",
+                "FOUND_BETTER_PRICE"
+              ],
+              "returnable": true,
+              "returnPolicy": "ion://policy/return.electronics.14d-unopened-or-defective-sellerpays",
+              "sellerPickupReturn": true,
+              "returnEvidenceRequirement": "VIDEO_UNBOXING_REQUIRED",
+              "returnEvidenceMinPhotos": 3,
+              "warrantyPolicy": "ion://policy/warranty.manufacturer.1y-distance-service",
+              "disputePolicy": "ion://policy/dispute.consumer.bpsk",
+              "grievanceSlaPolicy": "ion://policy/grievance-sla.consumer.standard",
+              "paymentTermsPolicy": "ion://policy/payment-terms.upfront.full",
+              "timeToShip": "PT0S",
+              "availableOnCod": false,
+              "proofOfDeliveryType": "OTP",
+              "contactDetailsConsumerCare": "Apple Care Indonesia,applecare@istore-indonesia.co.id,0800-100-9701",
+              "displayLanguage": [
+                "id",
+                "en"
+              ]
+            }
+          },
+          "resources": [
+            {
+              "id": "IPHONE17-BASE",
+              "resourceAttributes": {
+                "@context": "https://schema.ion.id/trade/resource/v1/context.jsonld",
+                "@type": "ion:TradeResource",
+                "quantity": {
+                  "value": 1,
+                  "unit": "piece"
+                },
+                "resourceStructure": "VARIANT",
+                "identity": {
+                  "brand": "Apple",
+                  "model": "iPhone 17",
+                  "modelYear": 2026,
+                  "sku": "APPLE-IP17-256-NAT"
+                }
+              }
+            }
+          ],
+          "commitmentAttributes": {
+            "@context": "https://schema.ion.id/trade/commitment/v1/context.jsonld",
+            "@type": "ion:TradeCommitment",
+            "lineId": "L01",
+            "variantSelections": [
+              {
+                "axisId": "colour",
+                "valueId": "natural-titanium"
+              },
+              {
+                "axisId": "storage",
+                "valueId": "256gb"
+              }
+            ],
+            "resolvedVariantLabel": "iPhone 17 — 256 GB — Natural Titanium",
+            "price": {
+              "value": "20499000",
+              "currency": "IDR"
+            }
+          }
+        }
+      ],
+      "consideration": {
+        "considerationAttributes": {
+          "@context": "https://schema.ion.id/trade/consideration/v1/context.jsonld",
+          "@type": "ion:TradeConsideration",
+          "totalAmount": 22570740,
+          "currency": "IDR",
+          "taxIncluded": false,
+          "ppnRate": 0.11,
+          "breakup": [
+            {
+              "lineId": "L01-ITEM",
+              "breakupLineType": "ITEM",
+              "title": "iPhone 17 — 256 GB — Natural Titanium",
+              "commitmentId": "L01",
+              "resourceId": "IPHONE17-BASE",
+              "quantity": 1,
+              "unitPrice": 20499000,
+              "amount": 20499000,
+              "currency": "IDR"
+            },
+            {
+              "lineId": "DEL-001",
+              "breakupLineType": "DELIVERY",
+              "title": "Ongkos Kirim — Same Day (Jakarta Selatan)",
+              "amount": 35000,
+              "currency": "IDR"
+            },
+            {
+              "lineId": "DISC-001",
+              "breakupLineType": "PROVIDER_BENEFIT",
+              "title": "Promo Pelanggan Baru iStore",
+              "amount": -200000,
+              "currency": "IDR"
+            },
+            {
+              "lineId": "TAX-001",
+              "breakupLineType": "TAX",
+              "title": "PPN 11%",
+              "ppnRate": 0.11,
+              "taxBaseAmount": 20334000,
+              "amount": 2236740,
+              "currency": "IDR"
+            }
+          ]
+        }
+      },
+      "performance": [
+        {
+          "id": "PERF-001",
+          "status": {
+            "descriptor": {
+              "code": "PLANNED"
+            }
+          },
+          "performanceAttributes": {
+            "@context": "https://schema.ion.id/trade/performance/v1/context.jsonld",
+            "@type": "ion:TradePerformance",
+            "performanceMode": "DELIVERY",
+            "sla": {
+              "min": "PT2H",
+              "max": "PT6H",
+              "unitBasis": "ORDER_CONFIRMATION"
+            },
+            "fulfillmentType": "SAME_DAY",
+            "shippingProviderType": "THIRD_PARTY_ON_NETWORK"
+          }
+        }
+      ]
+    }
+  }
+}

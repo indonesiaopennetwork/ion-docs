@@ -1,0 +1,206 @@
+{
+  "_meta": {
+    "description": "B2C Storefront — init. Consumer enters delivery address and selects QRIS payment. BAP carries forward the consideration breakup from on_select to confirm the amounts the buyer agreed to. No consideration.id yet — BPP assigns it. Settlement declared as NOT_PAID with amount matching total from on_select.",
+    "pattern": "B2C-SF",
+    "step": "init",
+    "sent_by": "BAP",
+    "received_by": "BPP",
+    "schemaPacks": [
+      "core/address/v1",
+      "core/payment/v1",
+      "trade/consideration/v1",
+      "trade/performance/v1",
+      "trade/contract/v1"
+    ]
+  },
+  "context": {
+    "domain": "ion:trade",
+    "action": "init",
+    "version": "2.0.0",
+    "bapId": "tokobeli-consumer.ion.id",
+    "bapUri": "https://api.tokobeli.co.id/beckn",
+    "bppId": "istore-indonesia.ion.id",
+    "bppUri": "https://api.istore-indonesia.co.id/beckn",
+    "networkId": "ion.id",
+    "transactionId": "txn-b2c-ip17-20260519-0042",
+    "messageId": "msg-init-txn-b2c-ip17-20260519-0042",
+    "timestamp": "2026-05-19T10:17:30.000+07:00",
+    "ttl": "PT30S",
+    "location": {
+      "city": {
+        "code": "std:3171"
+      },
+      "country": {
+        "code": "IDN"
+      }
+    }
+  },
+  "message": {
+    "contract": {
+      "participants": [
+        {
+          "role": "BUYER",
+          "person": {
+            "name": "Sari Dewi Kusuma"
+          },
+          "contact": {
+            "phone": "08119876543",
+            "email": "sari.dewi@gmail.com"
+          },
+          "address": {
+            "door": "Unit 12B",
+            "building": "Apartemen Senopati Suites",
+            "street": "Jl. Senopati No.60",
+            "city": "Jakarta Selatan",
+            "areaCode": "12190"
+          }
+        },
+        {
+          "role": "PROVIDER",
+          "id": "PROV-ISTORE-JKT-001"
+        }
+      ],
+      "commitments": [
+        {
+          "id": "L01",
+          "status": {
+            "descriptor": {
+              "code": "DRAFT"
+            }
+          },
+          "offer": {
+            "id": "OFFER-IPHONE17-B2C-001"
+          }
+        }
+      ],
+      "consideration": {
+        "considerationAttributes": {
+          "@context": "https://schema.ion.id/trade/consideration/v1/context.jsonld",
+          "@type": "ion:TradeConsideration",
+          "totalAmount": 22570740,
+          "currency": "IDR",
+          "taxIncluded": false,
+          "ppnRate": 0.11,
+          "breakup": [
+            {
+              "lineId": "L01-ITEM",
+              "breakupLineType": "ITEM",
+              "title": "iPhone 17 — 256 GB — Natural Titanium",
+              "commitmentId": "L01",
+              "resourceId": "IPHONE17-BASE",
+              "quantity": 1,
+              "unitPrice": 20499000,
+              "amount": 20499000,
+              "currency": "IDR"
+            },
+            {
+              "lineId": "DEL-001",
+              "breakupLineType": "DELIVERY",
+              "title": "Ongkos Kirim — Same Day (Jakarta Selatan)",
+              "amount": 35000,
+              "currency": "IDR"
+            },
+            {
+              "lineId": "DISC-001",
+              "breakupLineType": "PROVIDER_BENEFIT",
+              "title": "Promo Pelanggan Baru iStore",
+              "amount": -200000,
+              "currency": "IDR"
+            },
+            {
+              "lineId": "TAX-001",
+              "breakupLineType": "TAX",
+              "title": "PPN 11%",
+              "ppnRate": 0.11,
+              "taxBaseAmount": 20334000,
+              "amount": 2236740,
+              "currency": "IDR"
+            }
+          ]
+        }
+      },
+      "performance": [
+        {
+          "id": "PERF-001",
+          "status": {
+            "descriptor": {
+              "code": "PLANNED"
+            }
+          },
+          "performanceAttributes": {
+            "@context": "https://schema.ion.id/trade/performance/v1/context.jsonld",
+            "@type": "ion:TradePerformance",
+            "performanceMode": "DELIVERY",
+            "stops": [
+              {
+                "type": "start",
+                "location": {
+                  "id": "LOC-ISTORE-SUDIRMAN-001",
+                  "descriptor": {
+                    "name": "iStore Sudirman — Fulfilment Hub"
+                  },
+                  "gps": "-6.2088,106.8213"
+                }
+              },
+              {
+                "type": "end",
+                "location": {
+                  "address": {
+                    "door": "Unit 12B",
+                    "building": "Apartemen Senopati Suites",
+                    "street": "Jl. Senopati No.60",
+                    "city": "Jakarta Selatan",
+                    "areaCode": "12190"
+                  },
+                  "gps": "-6.2245,106.8069",
+                  "ionAddressAttributes": {
+                    "@context": "https://schema.ion.id/core/address/v1/context.jsonld",
+                    "@type": "ion:IONAddressSubdivisions",
+                    "provinsiCode": "BPS-31",
+                    "kabupatenCode": "3174",
+                    "kecamatan": "Kebayoran Baru",
+                    "kelurahan": "Senayan"
+                  }
+                },
+                "contact": {
+                  "phone": "08119876543",
+                  "name": "Sari Dewi Kusuma"
+                }
+              }
+            ]
+          }
+        }
+      ],
+      "settlements": [
+        {
+          "id": "PAY-B2C-0042",
+          "considerationId": "CONSID-B2C-0042",
+          "status": "DRAFT",
+          "settlementAttributes": {
+            "@context": "https://schema.ion.id/core/payment/v1/context.jsonld",
+            "@type": "ion:PaymentDeclaration",
+            "method": "QRIS",
+            "paymentRail": "QRIS",
+            "collectedBy": "BAP",
+            "timing": "ON_ORDER",
+            "paymentStatus": "NOT_PAID",
+            "amount": 22570740,
+            "currency": "IDR"
+          }
+        }
+      ],
+      "contractAttributes": {
+        "@context": "https://schema.ion.id/trade/contract/v1/context.jsonld",
+        "@type": "ion:TradeContract",
+        "invoicePreferences": {
+          "invoiceType": "RECEIPT",
+          "emailInvoice": "sari.dewi@gmail.com"
+        },
+        "deliveryPreferences": {
+          "safeDropAllowed": false
+        },
+        "buyerInstructions": "Hubungi 10 menit sebelum tiba. Intercom Lantai 12."
+      }
+    }
+  }
+}

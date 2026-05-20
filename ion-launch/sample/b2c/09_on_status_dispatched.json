@@ -1,0 +1,119 @@
+{
+  "_meta": {
+    "description": "B2C Storefront — on_status DISPATCHED. GoSend Same Day courier collected package from iStore Sudirman. State: PACKED → DISPATCHED. Required per spec: awbNumber, trackingUrl, estimatedDeliveryTime. OTP 738291 carried — courier will use it at doorstep. AWB = GOSEND-SD-20260519-889234.",
+    "pattern": "B2C-SF",
+    "step": "on_status",
+    "statusCode": "DISPATCHED",
+    "stateMachineTransition": "PACKED → DISPATCHED",
+    "sent_by": "BPP",
+    "received_by": "BAP"
+  },
+  "context": {
+    "domain": "ion:trade",
+    "action": "on_status",
+    "version": "2.0.0",
+    "bapId": "tokobeli-consumer.ion.id",
+    "bapUri": "https://api.tokobeli.co.id/beckn",
+    "bppId": "istore-indonesia.ion.id",
+    "bppUri": "https://api.istore-indonesia.co.id/beckn",
+    "networkId": "ion.id",
+    "transactionId": "txn-b2c-ip17-20260519-0042",
+    "messageId": "msg-dispatched-txn-b2c-ip17-20260519-0042",
+    "timestamp": "2026-05-19T12:30:00.000+07:00",
+    "ttl": "PT30S",
+    "location": {
+      "city": {
+        "code": "std:3171"
+      },
+      "country": {
+        "code": "IDN"
+      }
+    }
+  },
+  "message": {
+    "contract": {
+      "id": "ORD-B2C-20260519-0042",
+      "status": {
+        "descriptor": {
+          "code": "ACTIVE"
+        }
+      },
+      "performance": [
+        {
+          "id": "PERF-001",
+          "commitmentIds": [
+            "L01"
+          ],
+          "status": {
+            "descriptor": {
+              "code": "DISPATCHED"
+            }
+          },
+          "performanceAttributes": {
+            "@context": "https://schema.ion.id/trade/performance/v1/context.jsonld",
+            "@type": "ion:TradePerformance",
+            "performanceMode": "DELIVERY",
+            "proofOfDeliveryType": "OTP",
+            "deliveryOtp": "738291",
+            "stops": [
+              {
+                "type": "start",
+                "location": {
+                  "id": "LOC-ISTORE-SUDIRMAN-001",
+                  "descriptor": {
+                    "name": "iStore Sudirman — Fulfilment Hub"
+                  },
+                  "gps": "-6.2088,106.8213"
+                }
+              },
+              {
+                "type": "end",
+                "location": {
+                  "address": {
+                    "door": "Unit 12B",
+                    "building": "Apartemen Senopati Suites",
+                    "street": "Jl. Senopati No.60",
+                    "city": "Jakarta Selatan",
+                    "areaCode": "12190"
+                  },
+                  "gps": "-6.2245,106.8069",
+                  "ionAddressAttributes": {
+                    "@context": "https://schema.ion.id/core/address/v1/context.jsonld",
+                    "@type": "ion:IONAddressSubdivisions",
+                    "provinsiCode": "BPS-31",
+                    "kabupatenCode": "3174",
+                    "kecamatan": "Kebayoran Baru",
+                    "kelurahan": "Senayan"
+                  }
+                },
+                "contact": {
+                  "phone": "08119876543",
+                  "name": "Sari Dewi Kusuma"
+                }
+              }
+            ],
+            "awbNumber": "GOSEND-SD-20260519-889234",
+            "trackingUrl": "https://gosend.id/track/GOSEND-SD-20260519-889234",
+            "agentName": "Rudi Hartono",
+            "agentPhone": "08567891234",
+            "agentPhoto": "https://driver.gojek.com/photos/rudi-hartono-verified.jpg",
+            "estimatedDeliveryTime": "2026-05-19T15:30:00.000+07:00",
+            "fulfillmentType": "SAME_DAY",
+            "shippingProviderName": "GoSend Same Day",
+            "shippingProviderType": "THIRD_PARTY_ON_NETWORK"
+          }
+        }
+      ],
+      "commitments": [
+        {
+          "id": "L01",
+          "status": {
+            "descriptor": {
+              "code": "ACTIVE"
+            }
+          }
+        }
+      ]
+    }
+  }
+}

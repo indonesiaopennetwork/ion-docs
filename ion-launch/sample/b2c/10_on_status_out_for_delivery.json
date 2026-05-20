@@ -1,0 +1,119 @@
+{
+  "_meta": {
+    "description": "B2C Storefront — on_status OUT_FOR_DELIVERY. Package is on courier vehicle and will arrive today. State: DISPATCHED → OUT_FOR_DELIVERY. OTP 738291 carried — consumer should be ready to give it to courier. Estimated window 15:00–16:00.",
+    "pattern": "B2C-SF",
+    "step": "on_status",
+    "statusCode": "OUT_FOR_DELIVERY",
+    "stateMachineTransition": "DISPATCHED → OUT_FOR_DELIVERY",
+    "sent_by": "BPP",
+    "received_by": "BAP"
+  },
+  "context": {
+    "domain": "ion:trade",
+    "action": "on_status",
+    "version": "2.0.0",
+    "bapId": "tokobeli-consumer.ion.id",
+    "bapUri": "https://api.tokobeli.co.id/beckn",
+    "bppId": "istore-indonesia.ion.id",
+    "bppUri": "https://api.istore-indonesia.co.id/beckn",
+    "networkId": "ion.id",
+    "transactionId": "txn-b2c-ip17-20260519-0042",
+    "messageId": "msg-ofd-txn-b2c-ip17-20260519-0042",
+    "timestamp": "2026-05-19T14:45:00.000+07:00",
+    "ttl": "PT30S",
+    "location": {
+      "city": {
+        "code": "std:3171"
+      },
+      "country": {
+        "code": "IDN"
+      }
+    }
+  },
+  "message": {
+    "contract": {
+      "id": "ORD-B2C-20260519-0042",
+      "status": {
+        "descriptor": {
+          "code": "ACTIVE"
+        }
+      },
+      "performance": [
+        {
+          "id": "PERF-001",
+          "commitmentIds": [
+            "L01"
+          ],
+          "status": {
+            "descriptor": {
+              "code": "OUT_FOR_DELIVERY"
+            }
+          },
+          "performanceAttributes": {
+            "@context": "https://schema.ion.id/trade/performance/v1/context.jsonld",
+            "@type": "ion:TradePerformance",
+            "performanceMode": "DELIVERY",
+            "proofOfDeliveryType": "OTP",
+            "deliveryOtp": "738291",
+            "stops": [
+              {
+                "type": "start",
+                "location": {
+                  "id": "LOC-ISTORE-SUDIRMAN-001",
+                  "descriptor": {
+                    "name": "iStore Sudirman — Fulfilment Hub"
+                  },
+                  "gps": "-6.2088,106.8213"
+                }
+              },
+              {
+                "type": "end",
+                "location": {
+                  "address": {
+                    "door": "Unit 12B",
+                    "building": "Apartemen Senopati Suites",
+                    "street": "Jl. Senopati No.60",
+                    "city": "Jakarta Selatan",
+                    "areaCode": "12190"
+                  },
+                  "gps": "-6.2245,106.8069",
+                  "ionAddressAttributes": {
+                    "@context": "https://schema.ion.id/core/address/v1/context.jsonld",
+                    "@type": "ion:IONAddressSubdivisions",
+                    "provinsiCode": "BPS-31",
+                    "kabupatenCode": "3174",
+                    "kecamatan": "Kebayoran Baru",
+                    "kelurahan": "Senayan"
+                  }
+                },
+                "contact": {
+                  "phone": "08119876543",
+                  "name": "Sari Dewi Kusuma"
+                }
+              }
+            ],
+            "awbNumber": "GOSEND-SD-20260519-889234",
+            "trackingUrl": "https://gosend.id/track/GOSEND-SD-20260519-889234",
+            "agentName": "Rudi Hartono",
+            "agentPhone": "08567891234",
+            "estimatedDeliveryTime": "2026-05-19T15:30:00.000+07:00",
+            "promisedWindow": {
+              "startAt": "2026-05-19T15:00:00.000+07:00",
+              "endAt": "2026-05-19T16:00:00.000+07:00"
+            }
+          }
+        }
+      ],
+      "commitments": [
+        {
+          "id": "L01",
+          "status": {
+            "descriptor": {
+              "code": "ACTIVE"
+            }
+          }
+        }
+      ]
+    }
+  }
+}
