@@ -357,7 +357,7 @@
           "considerationId": "CONSID-B2C-0042",
           "status": "COMPLETE",
           "settlementAttributes": {
-            "@context": "https://schema.ion.id/extensions/core/v2/context.jsonld",
+            "@context": "https://raw.githubusercontent.com/indonesiaopennetwork/ion-specs/refs/heads/ion-launch/schema/core/v2/context.jsonld",
             "@type": "beckn:Attributes",
             "method": "QRIS",
             "paymentStatus": "PAID",

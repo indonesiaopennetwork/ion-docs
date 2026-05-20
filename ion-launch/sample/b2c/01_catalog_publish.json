@@ -279,7 +279,38 @@
               }
             ]
           }
-        }
+        },
+        "offers": [
+          {
+            "id": "OFFER-IPHONE17-B2C-001",
+            "descriptor": {
+              "name": "iPhone 17 Base Model Offer",
+              "shortDesc": "Base price for iPhone 17 128GB variant."
+            },
+            "offerAttributes": {
+              "@context": "https://schema.ion.id/extensions/trade/offer/v1/context.jsonld",
+              "@type": "ion:TradeOffer",
+              "cancellationPolicy": "ion://policy/cancel.prepacked.free",
+              "returnable": true,
+              "returnPolicy": "ion://policy/return.electronics.14d-unopened-or-defective-sellerpays",
+              "timeToShip": "PT24H",
+              "availableOnCod": false,
+              "proofOfDeliveryType": "OTP",
+              "warrantyPolicy": "ion://policy/warranty.manufacturer.1y-distance-service",
+              "disputePolicy": "ion://policy/dispute.consumer.bpsk",
+              "contactDetailsConsumerCare": "Apple Care Indonesia, applecare@istore-indonesia.co.id, 0800-100-9701",
+              "displayLanguage": [
+                "id",
+                "en"
+              ],
+              "grievanceSlaPolicy": "ion://policy/grievance-sla.consumer.standard",
+              "paymentTermsPolicy": "ion://policy/payment-terms.upfront.full"
+            },
+            "resourceIds": [
+              "IPHONE17-BASE"
+            ]
+          }
+        ]
       }
     ]
   }
