@@ -290,6 +290,8 @@
             "offerAttributes": {
               "@context": "https://schema.ion.id/extensions/trade/offer/v1/context.jsonld",
               "@type": "ion:TradeOffer",
+              "unitPrice": 18999000,
+              "currency": "IDR",
               "cancellationPolicy": "ion://policy/cancel.prepacked.free",
               "returnable": true,
               "returnPolicy": "ion://policy/return.electronics.14d-unopened-or-defective-sellerpays",
