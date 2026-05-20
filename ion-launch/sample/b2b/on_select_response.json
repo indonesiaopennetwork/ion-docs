@@ -1,0 +1,120 @@
+{
+  "context": {
+    "domain": "ion:trade",
+    "action": "on_select",
+    "version": "2.0.0",
+    "bapId": "procurement.nusaretail.id",
+    "bapUri": "https://procurement.nusaretail.co.id/beckn",
+    "bppId": "samsung-dist-indonesia.ion.id",
+    "bppUri": "https://api.samsung-distributor.co.id/beckn",
+    "networkId": "ion.id",
+    "transactionId": "22222222-2222-4222-8222-222222222222",
+    "messageId": "22222222-2222-4222-8222-222222222002",
+    "timestamp": "2026-05-19T12:30:02Z",
+    "ttl": "PT30S",
+    "schemaContext": [
+      "https://schema.ion.id/extensions/trade/consideration/v1/context.jsonld",
+      "https://schema.ion.id/extensions/trade/contract/v1/context.jsonld"
+    ]
+  },
+  "message": {
+    "contract": {
+      "id": "22222222-2222-4222-8222-222222222201",
+      "status": {
+        "code": "DRAFT",
+        "name": "Quoted"
+      },
+      "commitments": [
+        {
+          "id": "commitment-b2b-001",
+          "status": {
+            "code": "ACTIVE",
+            "name": "Active"
+          },
+          "resources": [
+            {
+              "id": "resource-samsung-s25-256-black",
+              "quantity": {
+                "count": 50
+              }
+            }
+          ],
+          "offer": {
+            "id": "offer-samsung-s25-wholesale-001",
+            "resourceIds": [
+              "resource-samsung-s25-256-black"
+            ]
+          }
+        }
+      ],
+      "consideration": [
+        {
+          "id": "item",
+          "considerationAttributes": {
+            "@context": "https://schema.ion.id/extensions/trade/consideration/v1/context.jsonld",
+            "@type": "ion:TradeConsideration",
+            "breakupLineType": "ITEM",
+            "totalAmount": 550000000,
+            "currency": "IDR"
+          },
+          "status": {
+            "code": "ACTIVE",
+            "name": "Active"
+          }
+        },
+        {
+          "id": "delivery-perf-001",
+          "considerationAttributes": {
+            "@context": "https://schema.ion.id/extensions/trade/consideration/v1/context.jsonld",
+            "@type": "ion:TradeConsideration",
+            "breakupLineType": "DELIVERY",
+            "totalAmount": 400000,
+            "currency": "IDR",
+            "performanceId": "PERF-001"
+          },
+          "status": {
+            "code": "ACTIVE",
+            "name": "Active"
+          }
+        },
+        {
+          "id": "delivery-perf-002",
+          "considerationAttributes": {
+            "@context": "https://schema.ion.id/extensions/trade/consideration/v1/context.jsonld",
+            "@type": "ion:TradeConsideration",
+            "breakupLineType": "DELIVERY",
+            "totalAmount": 300000,
+            "currency": "IDR",
+            "performanceId": "PERF-002"
+          },
+          "status": {
+            "code": "ACTIVE",
+            "name": "Active"
+          }
+        },
+        {
+          "id": "tax",
+          "considerationAttributes": {
+            "@context": "https://schema.ion.id/extensions/trade/consideration/v1/context.jsonld",
+            "@type": "ion:TradeConsideration",
+            "breakupLineType": "TAX",
+            "ppnRate": 0.11,
+            "totalAmount": 60577000,
+            "currency": "IDR"
+          },
+          "status": {
+            "code": "ACTIVE",
+            "name": "Active"
+          }
+        }
+      ],
+      "contractAttributes": {
+        "@context": "https://schema.ion.id/extensions/trade/contract/v1/context.jsonld",
+        "@type": "ion:TradeContract",
+        "paymentTermsPolicy": "ion://policy/payment-terms.credit.net-30",
+        "cancellationPolicy": "ion://policy/cancellation.b2b-restocking",
+        "partialCancellationAllowed": true
+      }
+    }
+  }
+}

@@ -1,0 +1,116 @@
+{
+  "context": {
+    "domain": "ion:trade",
+    "action": "select",
+    "version": "2.0.0",
+    "bapId": "procurement.nusaretail.id",
+    "bapUri": "https://procurement.nusaretail.co.id/beckn",
+    "bppId": "samsung-dist-indonesia.ion.id",
+    "bppUri": "https://api.samsung-distributor.co.id/beckn",
+    "networkId": "ion.id",
+    "transactionId": "22222222-2222-4222-8222-222222222222",
+    "messageId": "22222222-2222-4222-8222-222222222001",
+    "timestamp": "2026-05-19T12:30:00Z",
+    "ttl": "PT30S",
+    "schemaContext": [
+      "https://schema.ion.id/extensions/trade/commitment/v1/context.jsonld",
+      "https://schema.ion.id/extensions/trade/contract/v1/context.jsonld",
+      "https://schema.ion.id/extensions/trade/performance/v1/context.jsonld"
+    ]
+  },
+  "message": {
+    "contract": {
+      "id": "22222222-2222-4222-8222-222222222201",
+      "commitments": [
+        {
+          "status": {
+            "code": "DRAFT",
+            "name": "Draft"
+          },
+          "resources": [
+            {
+              "id": "resource-samsung-s25-256-black",
+              "quantity": {
+                "count": 50
+              }
+            }
+          ],
+          "offer": {
+            "id": "offer-samsung-s25-wholesale-001",
+            "resourceIds": [
+              "resource-samsung-s25-256-black"
+            ]
+          },
+          "commitmentAttributes": {
+            "@context": "https://schema.ion.id/extensions/trade/commitment/v1/context.jsonld",
+            "@type": "ion:TradeCommitment",
+            "lineId": "B2B-L1",
+            "resourceId": "resource-samsung-s25-256-black",
+            "offerId": "offer-samsung-s25-wholesale-001",
+            "quantity": {
+              "count": 50
+            },
+            "minimumOrderQuantity": 10,
+            "variantSelections": {
+              "color": "Phantom Black",
+              "storage": "256GB"
+            }
+          },
+          "id": "commitment-b2b-001"
+        }
+      ],
+      "contractAttributes": {
+        "@context": "https://schema.ion.id/extensions/trade/contract/v1/context.jsonld",
+        "@type": "ion:TradeContract",
+        "pattern": "business-procurement/v1",
+        "buyerType": "B2B",
+        "purchaseOrderReference": "PO-2026-00421",
+        "buyerLegalEntityName": "PT Nusantara Retail Grosir",
+        "procurementObjective": "Refresh flagship handset inventory across Jakarta and Bandung premium retail outlets before the Lebaran sales cycle.",
+        "approvalContext": "Commercial, finance, and merchandising approvals already completed"
+      },
+      "performance": [
+        {
+          "id": "PERF-001",
+          "status": {
+            "code": "PLANNED",
+            "name": "Planned"
+          },
+          "performanceAttributes": {
+            "@context": "https://schema.ion.id/extensions/trade/performance/v1/context.jsonld",
+            "@type": "ion:TradePerformance",
+            "plannedQuantity": 30,
+            "requestedDeliveryDate": "2026-05-22",
+            "performanceMode": "DELIVERY",
+            "supportedPerformanceModes": [
+              "DELIVERY"
+            ],
+            "sla": {
+              "unitBasis": "ORDER_CONFIRMATION"
+            }
+          }
+        },
+        {
+          "id": "PERF-002",
+          "status": {
+            "code": "PLANNED",
+            "name": "Planned"
+          },
+          "performanceAttributes": {
+            "@context": "https://schema.ion.id/extensions/trade/performance/v1/context.jsonld",
+            "@type": "ion:TradePerformance",
+            "plannedQuantity": 20,
+            "requestedDeliveryDate": "2026-05-26",
+            "performanceMode": "DELIVERY",
+            "supportedPerformanceModes": [
+              "DELIVERY"
+            ],
+            "sla": {
+              "unitBasis": "ORDER_CONFIRMATION"
+            }
+          }
+        }
+      ]
+    }
+  }
+}

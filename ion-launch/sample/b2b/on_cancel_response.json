@@ -1,0 +1,89 @@
+{
+  "context": {
+    "domain": "ion:trade",
+    "action": "on_cancel",
+    "version": "2.0.0",
+    "bapId": "procurement.nusaretail.id",
+    "bapUri": "https://procurement.nusaretail.co.id/beckn",
+    "bppId": "samsung-dist-indonesia.ion.id",
+    "bppUri": "https://api.samsung-distributor.co.id/beckn",
+    "networkId": "ion.id",
+    "transactionId": "22222222-2222-4222-8222-222222222222",
+    "messageId": "22222222-2222-4222-8222-222222222016",
+    "timestamp": "2026-05-22T09:21:02Z",
+    "ttl": "PT30S",
+    "schemaContext": [
+      "https://schema.ion.id/extensions/trade/commitment/v1/context.jsonld",
+      "https://schema.ion.id/extensions/trade/consideration/v1/context.jsonld",
+      "https://schema.ion.id/extensions/trade/contract/v1/context.jsonld"
+    ]
+  },
+  "message": {
+    "contract": {
+      "id": "22222222-2222-4222-8222-222222222202",
+      "status": {
+        "code": "ACTIVE",
+        "name": "Partial cancellation accepted"
+      },
+      "commitments": [
+        {
+          "id": "commitment-b2b-001",
+          "status": {
+            "code": "ACTIVE",
+            "name": "Active"
+          },
+          "resources": [
+            {
+              "id": "resource-samsung-s25-256-black",
+              "quantity": {
+                "count": 15
+              }
+            }
+          ],
+          "commitmentAttributes": {
+            "@context": "https://schema.ion.id/extensions/trade/commitment/v1/context.jsonld",
+            "@type": "ion:TradeCommitment",
+            "lineId": "B2B-L1",
+            "quantity": {
+              "count": 15
+            },
+            "quantityBefore": 20,
+            "quantityCancelled": 5,
+            "quantityRemaining": 15,
+            "affectedPerformanceId": "PERF-002",
+            "resourceId": "resource-samsung-s25-256-black",
+            "offerId": "offer-samsung-s25-wholesale-001"
+          },
+          "offer": {
+            "id": "offer-samsung-s25-wholesale-001",
+            "resourceIds": [
+              "resource-samsung-s25-256-black"
+            ]
+          }
+        }
+      ],
+      "consideration": [
+        {
+          "id": "restocking-fee",
+          "considerationAttributes": {
+            "@context": "https://schema.ion.id/extensions/trade/consideration/v1/context.jsonld",
+            "@type": "ion:TradeConsideration",
+            "breakupLineType": "RESTOCKING_FEE",
+            "totalAmount": 11000000,
+            "currency": "IDR"
+          },
+          "status": {
+            "code": "ACTIVE",
+            "name": "Active"
+          }
+        }
+      ],
+      "contractAttributes": {
+        "@context": "https://schema.ion.id/extensions/trade/contract/v1/context.jsonld",
+        "@type": "ion:TradeContract",
+        "cancellationPolicy": "ion://policy/cancellation.b2b-restocking",
+        "penaltyPolicy": "ion://policy/penalty.buyer-restocking-20pct"
+      }
+    }
+  }
+}

@@ -1,0 +1,78 @@
+{
+  "context": {
+    "domain": "ion:trade",
+    "action": "on_status",
+    "version": "2.0.0",
+    "bapId": "shopmate.consumer.id",
+    "bapUri": "https://app.shopmate.id/beckn",
+    "bppId": "istore-indonesia.ion.id",
+    "bppUri": "https://api.istore-indonesia.co.id/beckn",
+    "networkId": "ion.id",
+    "transactionId": "11111111-1111-4111-8111-111111111111",
+    "messageId": "11111111-1111-4111-8111-111111111009",
+    "timestamp": "2026-05-19T16:32:00Z",
+    "schemaContext": [
+      "https://schema.ion.id/extensions/trade/performance/v1/context.jsonld"
+    ]
+  },
+  "message": {
+    "contract": {
+      "id": "11111111-1111-4111-8111-111111111102",
+      "status": {
+        "code": "COMPLETE",
+        "name": "Delivered"
+      },
+      "commitments": [
+        {
+          "id": "commitment-b2c-001",
+          "status": {
+            "code": "ACTIVE",
+            "name": "Active"
+          },
+          "resources": [
+            {
+              "id": "resource-iphone17-natural-256",
+              "quantity": {
+                "count": 1
+              }
+            }
+          ],
+          "offer": {
+            "id": "offer-iphone17-retail-001",
+            "resourceIds": [
+              "resource-iphone17-natural-256"
+            ]
+          }
+        }
+      ],
+      "performance": [
+        {
+          "id": "PERF-B2C-001",
+          "status": {
+            "code": "DELIVERED",
+            "name": "Delivered"
+          },
+          "performanceAttributes": {
+            "@context": "https://schema.ion.id/extensions/trade/performance/v1/context.jsonld",
+            "@type": "ion:TradePerformance",
+            "deliveredAt": "2026-05-19T16:31:40Z",
+            "otpVerified": true,
+            "returnWindowStart": "2026-05-19T16:32:00Z",
+            "returnWindowDays": 14,
+            "receivedBy": "Lobby Concierge - Menara A",
+            "handoverLocation": "Menara A lobby reception, Setiabudi",
+            "deliveryAgent": "Rizky Maulana",
+            "buyerVisibleMessage": "Delivered successfully. Your 14-day return window starts now for unopened or defective items.",
+            "performanceMode": "DELIVERY",
+            "supportedPerformanceModes": [
+              "DELIVERY"
+            ],
+            "sla": {
+              "unitBasis": "ORDER_CONFIRMATION"
+            }
+          }
+        }
+      ]
+    }
+  }
+}

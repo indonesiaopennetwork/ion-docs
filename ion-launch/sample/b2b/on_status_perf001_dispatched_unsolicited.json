@@ -1,0 +1,74 @@
+{
+  "context": {
+    "domain": "ion:trade",
+    "action": "on_status",
+    "version": "2.0.0",
+    "bapId": "procurement.nusaretail.id",
+    "bapUri": "https://procurement.nusaretail.co.id/beckn",
+    "bppId": "samsung-dist-indonesia.ion.id",
+    "bppUri": "https://api.samsung-distributor.co.id/beckn",
+    "networkId": "ion.id",
+    "transactionId": "22222222-2222-4222-8222-222222222222",
+    "messageId": "22222222-2222-4222-8222-222222222008",
+    "timestamp": "2026-05-20T10:15:00Z",
+    "schemaContext": [
+      "https://schema.ion.id/extensions/trade/performance/v1/context.jsonld"
+    ]
+  },
+  "message": {
+    "contract": {
+      "id": "22222222-2222-4222-8222-222222222202",
+      "commitments": [
+        {
+          "id": "commitment-b2b-001",
+          "status": {
+            "code": "ACTIVE",
+            "name": "Active"
+          },
+          "resources": [
+            {
+              "id": "resource-samsung-s25-256-black",
+              "quantity": {
+                "count": 50
+              }
+            }
+          ],
+          "offer": {
+            "id": "offer-samsung-s25-wholesale-001",
+            "resourceIds": [
+              "resource-samsung-s25-256-black"
+            ]
+          }
+        }
+      ],
+      "performance": [
+        {
+          "id": "PERF-001",
+          "status": {
+            "code": "DISPATCHED",
+            "name": "Dispatched"
+          },
+          "performanceAttributes": {
+            "@context": "https://schema.ion.id/extensions/trade/performance/v1/context.jsonld",
+            "@type": "ion:TradePerformance",
+            "awb": "AWB-PERF001-7781",
+            "carrierName": "Nusantara Freight",
+            "estimatedDeliveryDate": "2026-05-21",
+            "dispatchHubName": "Bekasi National Outbound Hub",
+            "carrierReference": "NF-LTL-20260520-7781",
+            "vehiclePlate": "B 9821 FTX",
+            "driverName": "Hendra Saputra",
+            "buyerVisibleMessage": "Wave 1 has departed Bekasi and is moving toward your Jakarta receiving warehouse.",
+            "performanceMode": "DELIVERY",
+            "supportedPerformanceModes": [
+              "DELIVERY"
+            ],
+            "sla": {
+              "unitBasis": "ORDER_CONFIRMATION"
+            }
+          }
+        }
+      ]
+    }
+  }
+}

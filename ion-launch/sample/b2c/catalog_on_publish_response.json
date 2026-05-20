@@ -1,0 +1,29 @@
+{
+  "context": {
+    "domain": "ion:trade",
+    "action": "catalog/on_publish",
+    "version": "2.0.0",
+    "bapId": "catalog.ion.id",
+    "bapUri": "https://catalog.ion.id/beckn",
+    "bppId": "istore-indonesia.ion.id",
+    "bppUri": "https://api.istore-indonesia.co.id/beckn",
+    "networkId": "ion.id",
+    "transactionId": "33333333-3333-4333-8333-333333333333",
+    "messageId": "33333333-3333-4333-8333-333333333002",
+    "timestamp": "2026-05-19T11:40:02Z",
+    "ttl": "PT30S"
+  },
+  "message": {
+    "results": [
+      {
+        "catalogId": "catalog-istore-apple-b2c-001",
+        "status": "ACCEPTED",
+        "stats": {
+          "itemCount": 1,
+          "providerCount": 1,
+          "categoryCount": 1
+        }
+      }
+    ]
+  }
+}

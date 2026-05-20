@@ -1,0 +1,74 @@
+{
+  "context": {
+    "domain": "ion:trade",
+    "action": "on_status",
+    "version": "2.0.0",
+    "bapId": "procurement.nusaretail.id",
+    "bapUri": "https://procurement.nusaretail.co.id/beckn",
+    "bppId": "samsung-dist-indonesia.ion.id",
+    "bppUri": "https://api.samsung-distributor.co.id/beckn",
+    "networkId": "ion.id",
+    "transactionId": "22222222-2222-4222-8222-222222222222",
+    "messageId": "22222222-2222-4222-8222-222222222011",
+    "timestamp": "2026-05-23T11:40:00Z",
+    "schemaContext": [
+      "https://schema.ion.id/extensions/trade/performance/v1/context.jsonld"
+    ]
+  },
+  "message": {
+    "contract": {
+      "id": "22222222-2222-4222-8222-222222222202",
+      "commitments": [
+        {
+          "id": "commitment-b2b-001",
+          "status": {
+            "code": "ACTIVE",
+            "name": "Active"
+          },
+          "resources": [
+            {
+              "id": "resource-samsung-s25-256-black",
+              "quantity": {
+                "count": 50
+              }
+            }
+          ],
+          "offer": {
+            "id": "offer-samsung-s25-wholesale-001",
+            "resourceIds": [
+              "resource-samsung-s25-256-black"
+            ]
+          }
+        }
+      ],
+      "performance": [
+        {
+          "id": "PERF-002",
+          "status": {
+            "code": "DISPATCHED",
+            "name": "Dispatched"
+          },
+          "performanceAttributes": {
+            "@context": "https://schema.ion.id/extensions/trade/performance/v1/context.jsonld",
+            "@type": "ion:TradePerformance",
+            "awb": "AWB-PERF002-1299",
+            "carrierName": "Nusantara Freight",
+            "estimatedDeliveryDate": "2026-05-24",
+            "dispatchHubName": "Bekasi National Outbound Hub",
+            "carrierReference": "NF-LTL-20260523-1299",
+            "vehiclePlate": "B 7642 PQL",
+            "driverName": "Budi Hartono",
+            "buyerVisibleMessage": "Wave 2 has departed the Bekasi hub and is moving on the scheduled Bandung-Jakarta route.",
+            "performanceMode": "DELIVERY",
+            "supportedPerformanceModes": [
+              "DELIVERY"
+            ],
+            "sla": {
+              "unitBasis": "ORDER_CONFIRMATION"
+            }
+          }
+        }
+      ]
+    }
+  }
+}

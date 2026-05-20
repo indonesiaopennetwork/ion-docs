@@ -1,0 +1,133 @@
+{
+  "context": {
+    "domain": "ion:trade",
+    "action": "on_discover",
+    "version": "2.0.0",
+    "bapId": "procurement.nusaretail.id",
+    "bapUri": "https://procurement.nusaretail.co.id/beckn",
+    "bppId": "samsung-dist-indonesia.ion.id",
+    "bppUri": "https://api.samsung-distributor.co.id/beckn",
+    "networkId": "ion.id",
+    "transactionId": "66666666-6666-4666-8666-666666666666",
+    "messageId": "66666666-6666-4666-8666-666666666002",
+    "timestamp": "2026-05-19T11:55:02Z",
+    "ttl": "PT30S",
+    "schemaContext": [
+      "https://schema.ion.id/extensions/trade/offer/v1/context.jsonld",
+      "https://schema.ion.id/extensions/trade/provider/v1/context.jsonld",
+      "https://schema.ion.id/extensions/trade/resource/v1/context.jsonld"
+    ]
+  },
+  "message": {
+    "catalogs": [
+      {
+        "id": "catalog-samsung-wholesale-001",
+        "bppId": "samsung-dist-indonesia.ion.id",
+        "bppUri": "https://api.samsung-distributor.co.id/beckn",
+        "descriptor": {
+          "name": "Samsung Indonesia Wholesale Catalog",
+          "shortDesc": "Verified-buyer catalog for reseller and enterprise purchasing, tuned for bulk orders and staged delivery commitments."
+        },
+        "provider": {
+          "id": "provider-samsung-dist-b2b-001",
+          "descriptor": {
+            "name": "PT Samsung Distributor Indonesia - B2B Wholesale Division",
+            "shortDesc": "National wholesale desk for Samsung mobile procurement with invoice-ready documentation and account-managed fulfilment."
+          },
+          "providerAttributes": {
+            "@context": "https://schema.ion.id/extensions/trade/provider/v1/context.jsonld",
+            "@type": "ion:TradeProvider",
+            "commercialCoverage": "INDONESIA_NATIONAL",
+            "fulfilmentCapability": "Multi-wave release for partial deliveries",
+            "invoicingModel": "CENTRAL",
+            "invoicingEntity": "PT Samsung Distributor Indonesia",
+            "storeStatus": "OPEN",
+            "operatingHours": [
+              {
+                "type": "ORDER",
+                "dayFrom": 1,
+                "dayTo": 5,
+                "timeFrom": "0830",
+                "timeTo": "1730"
+              }
+            ],
+            "holidayCalendar": [],
+            "providerCategory": "B2B_DISTRIBUTOR",
+            "nibRegistered": true,
+            "kycStatus": "APPROVED",
+            "kycLevel": "ENTERPRISE",
+            "kycValidUntil": "2027-12-31"
+          }
+        },
+        "resources": [
+          {
+            "id": "resource-samsung-s25-256-black",
+            "descriptor": {
+              "name": "Samsung Galaxy S25",
+              "shortDesc": "Wholesale-ready Samsung flagship device for reseller procurement and managed corporate deployment.",
+              "longDesc": "Business buyer listing with authorised distribution, predictable replenishment, and documentation suited to procurement approval flows."
+            },
+            "resourceAttributes": {
+              "@context": "https://schema.ion.id/extensions/trade/resource/v1/context.jsonld",
+              "@type": "ion:TradeResource",
+              "availability": {
+                "status": "IN_STOCK"
+              },
+              "identity": {
+                "brand": "Samsung",
+                "model": "Galaxy S25",
+                "sku": "SMS-S25-256-BLK"
+              },
+              "quantity": {
+                "value": 50,
+                "unit": "piece"
+              },
+              "resourceStructure": "PLAIN",
+              "resourceTangibility": "PHYSICAL",
+              "images": [
+                "https://cdn.example.ion.id/products/samsung-galaxy-s25-black.jpg"
+              ],
+              "logisticsServiceType": "DOMESTIC_SURFACE",
+              "ageRestricted": false,
+              "countryOfOrigin": "KOR"
+            }
+          }
+        ],
+        "offers": [
+          {
+            "id": "offer-samsung-s25-wholesale-001",
+            "resourceIds": [
+              "resource-samsung-s25-256-black"
+            ],
+            "descriptor": {
+              "name": "Business Procurement Offer",
+              "shortDesc": "NET 30 credit option, MOQ 10, and tiered commercial pricing for verified business buyers."
+            },
+            "offerAttributes": {
+              "@context": "https://schema.ion.id/extensions/trade/offer/v1/context.jsonld",
+              "@type": "ion:TradeOffer",
+              "minimumOrderQuantity": {
+                "count": 10
+              },
+              "paymentTermsPolicy": "ion://policy/payment-terms.credit.net-30",
+              "partialFulfilmentAllowed": true,
+              "cancellationPolicy": "ion://policy/cancellation.b2b-restocking",
+              "returnable": false,
+              "returnPolicy": "ion://policy/return.standard.none",
+              "warrantyPolicy": "ion://policy/warranty.standard.none",
+              "disputePolicy": "ion://policy/dispute.commercial.bani",
+              "timeToShip": "PT48H",
+              "availableOnCod": false,
+              "contactDetailsConsumerCare": "Samsung B2B Indonesia,b2b@samsung-dist.co.id,021-5088-9900",
+              "displayLanguage": [
+                "id",
+                "en"
+              ],
+              "grievanceSlaPolicy": "ion://policy/grievance-sla.commercial.standard"
+            }
+          }
+        ]
+      }
+    ]
+  }
+}

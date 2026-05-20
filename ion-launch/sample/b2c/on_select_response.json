@@ -1,0 +1,141 @@
+{
+  "context": {
+    "domain": "ion:trade",
+    "action": "on_select",
+    "version": "2.0.0",
+    "bapId": "shopmate.consumer.id",
+    "bapUri": "https://app.shopmate.id/beckn",
+    "bppId": "istore-indonesia.ion.id",
+    "bppUri": "https://api.istore-indonesia.co.id/beckn",
+    "networkId": "ion.id",
+    "transactionId": "11111111-1111-4111-8111-111111111111",
+    "messageId": "11111111-1111-4111-8111-111111111002",
+    "timestamp": "2026-05-19T12:00:02Z",
+    "ttl": "PT30S",
+    "schemaContext": [
+      "https://schema.ion.id/extensions/trade/consideration/v1/context.jsonld",
+      "https://schema.ion.id/extensions/trade/contract/v1/context.jsonld",
+      "https://schema.ion.id/extensions/trade/payment/v1/context.jsonld"
+    ]
+  },
+  "message": {
+    "contract": {
+      "id": "11111111-1111-4111-8111-111111111101",
+      "status": {
+        "code": "DRAFT",
+        "name": "Quoted"
+      },
+      "commitments": [
+        {
+          "id": "commitment-b2c-001",
+          "status": {
+            "code": "ACTIVE",
+            "name": "Active"
+          },
+          "resources": [
+            {
+              "id": "resource-iphone17-natural-256",
+              "quantity": {
+                "count": 1
+              }
+            }
+          ],
+          "offer": {
+            "id": "offer-iphone17-retail-001",
+            "resourceIds": [
+              "resource-iphone17-natural-256"
+            ]
+          }
+        }
+      ],
+      "consideration": [
+        {
+          "id": "item",
+          "considerationAttributes": {
+            "@context": "https://schema.ion.id/extensions/trade/consideration/v1/context.jsonld",
+            "@type": "ion:TradeConsideration",
+            "breakupLineType": "ITEM",
+            "totalAmount": 22000000,
+            "currency": "IDR"
+          },
+          "status": {
+            "code": "ACTIVE",
+            "name": "Active"
+          }
+        },
+        {
+          "id": "delivery",
+          "considerationAttributes": {
+            "@context": "https://schema.ion.id/extensions/trade/consideration/v1/context.jsonld",
+            "@type": "ion:TradeConsideration",
+            "breakupLineType": "DELIVERY",
+            "totalAmount": 35000,
+            "currency": "IDR"
+          },
+          "status": {
+            "code": "ACTIVE",
+            "name": "Active"
+          }
+        },
+        {
+          "id": "promotion",
+          "considerationAttributes": {
+            "@context": "https://schema.ion.id/extensions/trade/consideration/v1/context.jsonld",
+            "@type": "ion:TradeConsideration",
+            "breakupLineType": "PROVIDER_BENEFIT",
+            "totalAmount": -500000,
+            "currency": "IDR"
+          },
+          "status": {
+            "code": "ACTIVE",
+            "name": "Active"
+          }
+        },
+        {
+          "id": "tax",
+          "considerationAttributes": {
+            "@context": "https://schema.ion.id/extensions/trade/consideration/v1/context.jsonld",
+            "@type": "ion:TradeConsideration",
+            "breakupLineType": "TAX",
+            "ppnRate": 0.11,
+            "totalAmount": 2379850,
+            "currency": "IDR"
+          },
+          "status": {
+            "code": "ACTIVE",
+            "name": "Active"
+          }
+        }
+      ],
+      "settlements": [
+        {
+          "id": "settlement-b2c-001",
+          "status": "DRAFT",
+          "settlementAttributes": {
+            "@context": "https://raw.githubusercontent.com/indonesiaopennetwork/ion-specs/refs/heads/ion-launch/schema/core/v2/context.jsonld",
+            "@type": "beckn:Attributes",
+            "method": "PREPAID",
+            "timing": "ON_ORDER",
+            "status": "PENDING",
+            "currency": "IDR",
+            "methodDetail": {
+              "collectionAmount": 23914850,
+              "currency": "IDR"
+            },
+            "paymentRail": "QRIS"
+          }
+        }
+      ],
+      "contractAttributes": {
+        "@context": "https://schema.ion.id/extensions/trade/contract/v1/context.jsonld",
+        "@type": "ion:TradeContract",
+        "cancellationPolicy": "ion://policy/cancel.prepacked.free",
+        "returnPolicy": "ion://policy/return.electronics.14d-unopened-or-defective-sellerpays",
+        "warrantyPolicy": "ion://policy/warranty.manufacturer.1y-distance-service",
+        "proofOfDeliveryMethod": "OTP",
+        "codAllowed": false,
+        "slaToDispatch": "PT0S"
+      }
+    }
+  }
+}
