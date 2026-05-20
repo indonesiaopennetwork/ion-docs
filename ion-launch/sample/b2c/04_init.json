@@ -414,7 +414,7 @@
           "considerationId": "CONSID-B2C-0042",
           "status": "DRAFT",
           "settlementAttributes": {
-            "@context": "https://schema.ion.id/extensions/core/v2/context.jsonld",
+            "@context": "https://raw.githubusercontent.com/indonesiaopennetwork/ion-specs/refs/heads/ion-launch/schema/core/v2/context.jsonld",
             "@type": "beckn:Attributes",
             "method": "QRIS",
             "paymentRail": "QRIS",
@@ -427,8 +427,8 @@
         }
       ],
       "contractAttributes": {
-        "@context": "https://schema.ion.id/extensions/trade/contract/v1/context.jsonld",
-        "@type": "ion:TradeContract",
+        "@context": "https://raw.githubusercontent.com/indonesiaopennetwork/ion-specs/refs/heads/ion-launch/schema/core/v2/context.jsonld",
+        "@type": "contractAttributes",
         "buyerInstructions": "Hubungi 10 menit sebelum tiba. Intercom Lantai 12."
       }
     }
