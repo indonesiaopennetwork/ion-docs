@@ -1,0 +1,349 @@
+{
+  "_meta": {
+    "description": "B2B Business Procurement — on_select. BPP validates qty=50 ≥ MOQ=10, applies 10% tier: 50 × 11,520,000 = 576,000,000. Full breakup: item 576,000,000 + delivery-P1 450,000 + delivery-P2 300,000 + PPN 11% 63,442,500 = 640,192,500 IDR. Consideration has no ID yet — BPP assigns it at on_init. SLA per PERF required by B2B pattern spec. Offer terms attached for buyer review.",
+    "pattern": "B2B-PP",
+    "step": "on_select",
+    "sent_by": "BPP",
+    "received_by": "BAP",
+    "schemaPacks": [
+      "trade/offer/v1",
+      "trade/consideration/v1",
+      "trade/performance/v1",
+      "core/tax/v1"
+    ]
+  },
+  "context": {
+    "domain": "ion:trade",
+    "action": "on_select",
+    "version": "2.0.0",
+    "bapId": "procurement-portal-maju.ion.id",
+    "bapUri": "https://api.procurement.majuelektronik.co.id/beckn",
+    "bppId": "samsung-dist-indonesia.ion.id",
+    "bppUri": "https://api.samsung-distributor.co.id/beckn",
+    "networkId": "ion.id",
+    "transactionId": "55555555-5555-4555-8555-555555555555",
+    "messageId": "55555555-5555-4555-8555-555555555003",
+    "timestamp": "2026-05-19T09:00:05.000+07:00",
+    "ttl": "PT60S",
+    "location": {
+      "city": {
+        "code": "std:3275"
+      },
+      "country": {
+        "code": "IDN"
+      }
+    }
+  },
+  "message": {
+    "contract": {
+      "participants": [
+        {
+          "role": "PROVIDER",
+          "id": "PROV-SAMSUNG-DIST-JKT-001"
+        }
+      ],
+      "commitments": [
+        {
+          "id": "L01",
+          "status": {
+            "descriptor": {
+              "code": "DRAFT"
+            }
+          },
+          "offer": {
+            "id": "OFFER-SAMS25-B2B-001",
+            "resourceIds": [
+              "SAMSUNG-S25-BASE"
+            ],
+            "provider": {
+              "id": "PROV-SAMSUNG-DIST-JKT-001",
+              "descriptor": {
+                "name": "PT Samsung Distributor Indonesia — B2B Wholesale Division"
+              }
+            },
+            "offerAttributes": {
+              "@context": "https://schema.ion.id/extensions/trade/offer/v1/context.jsonld",
+              "@type": "ion:TradeOffer",
+              "minimumOrderQuantity": {
+                "count": 10
+              },
+              "appliedPricingTier": {
+                "minQty": 50,
+                "unitPrice": 11520000,
+                "currency": "IDR",
+                "discountPct": 10,
+                "tierLabel": "Tier 50-99 units — 10% off"
+              },
+              "cancellationPolicy": "ion://policy/cancellation.b2b-restocking",
+              "returnable": true,
+              "returnPolicy": "ion://policy/return.electronics.14d-unopened-or-defective-sellerpays",
+              "sellerPickupReturn": true,
+              "returnEvidenceRequirement": "VIDEO_UNBOXING_REQUIRED",
+              "returnEvidenceMinPhotos": 5,
+              "warrantyPolicy": "ion://policy/warranty.manufacturer.1y-distance-service",
+              "disputePolicy": "ion://policy/dispute.commercial.bani",
+              "grievanceSlaPolicy": "ion://policy/grievance-sla.b2b-businesshours",
+              "paymentTermsPolicy": "ion://policy/payment-terms.credit.net-30",
+              "availableOnCod": false,
+              "proofOfDeliveryType": "PHOTO",
+              "contactDetailsConsumerCare": "Samsung B2B Indonesia,b2b@samsung-dist.co.id,021-5088-9900",
+              "displayLanguage": [
+                "id",
+                "en"
+              ],
+              "partialFulfilmentAllowed": true,
+              "maxFulfilmentSplits": 2,
+              "timeToShip": "P2D"
+            }
+          },
+          "resources": [
+            {
+              "id": "SAMSUNG-S25-BASE",
+              "quantity": {
+                "count": 50
+              },
+              "resourceAttributes": {
+                "@context": "https://schema.ion.id/extensions/trade/resource/v1/context.jsonld",
+                "@type": "ion:TradeResource",
+                "quantity": {
+                  "value": 50,
+                  "unit": "piece"
+                },
+                "resourceStructure": "VARIANT",
+                "identity": {
+                  "brand": "Samsung",
+                  "model": "Galaxy S25",
+                  "modelYear": 2026,
+                  "sku": "SAM-S25-256-BLK"
+                },
+                "parentResourceId": "SAMSUNG-S25-BASE",
+                "isDefaultVariant": false,
+                "variantGroup": {
+                  "id": "SAMSUNG-S25",
+                  "name": {
+                    "id": "Samsung Galaxy S25 Variant Family",
+                    "en": "Samsung Galaxy S25 Variant Family"
+                  },
+                  "variantOn": "storage"
+                },
+                "resourceTangibility": "PHYSICAL",
+                "images": [
+                  "https://cdn.samsung-dist.co.id/galaxy-s25/primary.jpg"
+                ],
+                "logisticsServiceType": "DOMESTIC_SURFACE",
+                "availability": {
+                  "status": "IN_STOCK"
+                },
+                "ageRestricted": false,
+                "countryOfOrigin": "KOR",
+                "merchantStory": {
+                  "primaryUseCase": "Reseller procurement and managed enterprise device rollouts",
+                  "commercialPositioning": "High-demand flagship SKU with consistent replenishment planning",
+                  "afterSalesSupport": "Wholesale account manager plus Samsung-authorised warranty service"
+                }
+              }
+            }
+          ],
+          "commitmentAttributes": {
+            "@context": "https://schema.ion.id/extensions/trade/commitment/v1/context.jsonld",
+            "@type": "ion:TradeCommitment",
+            "lineId": "L01",
+            "variantSelections": [
+              {
+                "axisId": "colour",
+                "valueId": "phantom-black"
+              },
+              {
+                "axisId": "storage",
+                "valueId": "256gb"
+              }
+            ],
+            "resolvedVariantLabel": "Samsung Galaxy S25 — 256 GB — Phantom Black",
+            "appliedTierUnitPrice": 11520000,
+            "price": {
+              "value": "576000000",
+              "currency": "IDR"
+            },
+            "purchaseOrderReference": "PO-MAJU-2026-00841",
+            "resourceId": "SAMSUNG-S25-BASE",
+            "offerId": "OFFER-SAMS25-B2B-001",
+            "quantity": {
+              "measure": {
+                "unit": "PIECE",
+                "value": 50
+              }
+            }
+          }
+        }
+      ],
+      "consideration": [
+        {
+          "id": "CONSID-B2B-0007",
+          "status": {
+            "code": "DRAFT",
+            "name": "Draft"
+          },
+          "considerationAttributes": {
+            "@context": "https://schema.ion.id/extensions/trade/consideration/v1/context.jsonld",
+            "@type": "ion:TradeConsideration",
+            "totalAmount": 640192500,
+            "currency": "IDR",
+            "taxIncluded": false,
+            "ppnRate": 0.11,
+            "breakup": [
+              {
+                "lineId": "L01-ITEM",
+                "breakupLineType": "ITEM",
+                "title": "Samsung Galaxy S25 — 256GB Phantom Black x50 (Tier 10% off)",
+                "commitmentId": "L01",
+                "resourceId": "SAMSUNG-S25-BASE",
+                "quantity": 50,
+                "unitPrice": 11520000,
+                "amount": 576000000,
+                "currency": "IDR"
+              },
+              {
+                "lineId": "DEL-PERF-001",
+                "breakupLineType": "DELIVERY",
+                "title": "Ongkos Kirim Pengiriman 1 — JNE Freight (30 unit)",
+                "performanceId": "PERF-001",
+                "amount": 450000,
+                "currency": "IDR"
+              },
+              {
+                "lineId": "DEL-PERF-002",
+                "breakupLineType": "DELIVERY",
+                "title": "Ongkos Kirim Pengiriman 2 — JNE Freight (20 unit)",
+                "performanceId": "PERF-002",
+                "amount": 300000,
+                "currency": "IDR"
+              },
+              {
+                "lineId": "TAX-001",
+                "breakupLineType": "TAX",
+                "title": "PPN 11%",
+                "ppnRate": 0.11,
+                "taxBaseAmount": 576750000,
+                "amount": 63442500,
+                "currency": "IDR"
+              }
+            ],
+            "breakupLineType": "TAX"
+          }
+        }
+      ],
+      "performance": [
+        {
+          "id": "PERF-001",
+          "commitmentIds": [
+            "L01"
+          ],
+          "status": {
+            "code": "PLANNED",
+            "name": "PLANNED"
+          },
+          "performanceAttributes": {
+            "@context": "https://schema.ion.id/extensions/trade/performance/v1/context.jsonld",
+            "@type": "ion:TradePerformance",
+            "performanceMode": "DELIVERY",
+            "plannedQty": 30,
+            "plannedQtyUnit": "piece",
+            "stops": [
+              {
+                "type": "start",
+                "location": {
+                  "id": "LOC-SAMSUNG-WH-BEKASI-001",
+                  "descriptor": {
+                    "name": "Samsung Distribution Center — Bekasi"
+                  },
+                  "gps": "-6.2349,107.0081"
+                }
+              },
+              {
+                "type": "end",
+                "location": {
+                  "address": {
+                    "building": "Gudang Maju Elektronik — Tangerang",
+                    "street": "Jl. Industri Raya No.45 Blok C",
+                    "city": "Tangerang",
+                    "areaCode": "15710"
+                  },
+                  "gps": "-6.1742,106.6410"
+                },
+                "contact": {
+                  "phone": "02155889900",
+                  "name": "Budi Santoso — Kepala Gudang"
+                }
+              }
+            ],
+            "sla": {
+              "min": "P2D",
+              "max": "P3D",
+              "unitBasis": "ORDER_CONFIRMATION"
+            },
+            "estimatedDeliveryDate": "2026-05-22",
+            "shippingProviderName": "JNE Freight",
+            "supportedPerformanceModes": [
+              "DELIVERY"
+            ]
+          }
+        },
+        {
+          "id": "PERF-002",
+          "commitmentIds": [
+            "L01"
+          ],
+          "status": {
+            "code": "PLANNED",
+            "name": "PLANNED"
+          },
+          "performanceAttributes": {
+            "@context": "https://schema.ion.id/extensions/trade/performance/v1/context.jsonld",
+            "@type": "ion:TradePerformance",
+            "performanceMode": "DELIVERY",
+            "plannedQty": 20,
+            "plannedQtyUnit": "piece",
+            "stops": [
+              {
+                "type": "start",
+                "location": {
+                  "id": "LOC-SAMSUNG-WH-BEKASI-001",
+                  "descriptor": {
+                    "name": "Samsung Distribution Center — Bekasi"
+                  },
+                  "gps": "-6.2349,107.0081"
+                }
+              },
+              {
+                "type": "end",
+                "location": {
+                  "address": {
+                    "building": "Gudang Maju Elektronik — Tangerang",
+                    "street": "Jl. Industri Raya No.45 Blok C",
+                    "city": "Tangerang",
+                    "areaCode": "15710"
+                  },
+                  "gps": "-6.1742,106.6410"
+                },
+                "contact": {
+                  "phone": "02155889900",
+                  "name": "Budi Santoso — Kepala Gudang"
+                }
+              }
+            ],
+            "sla": {
+              "min": "P5D",
+              "max": "P7D",
+              "unitBasis": "ORDER_CONFIRMATION"
+            },
+            "estimatedDeliveryDate": "2026-05-26",
+            "shippingProviderName": "JNE Freight",
+            "supportedPerformanceModes": [
+              "DELIVERY"
+            ]
+          }
+        }
+      ]
+    }
+  }
+}

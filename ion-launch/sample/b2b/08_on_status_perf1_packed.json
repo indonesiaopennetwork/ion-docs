@@ -1,0 +1,177 @@
+{
+  "_meta": {
+    "description": "B2B — on_status PERF-001 PACKED. Warehouse picks and palletises 30 units into 6 cartons (12.8 kg). Surat Jalan SJ-SAMS-DIST-20260521-0007-P1 pre-issued. PERF-002 still PLANNED — cancellable until DISPATCHED. Both perfs shown in every on_status push.",
+    "pattern": "B2B-PP",
+    "step": "on_status",
+    "statusCode": "PACKED",
+    "performanceId": "PERF-001",
+    "stateMachineTransition": "PLANNED → PACKED",
+    "sent_by": "BPP",
+    "received_by": "BAP"
+  },
+  "context": {
+    "domain": "ion:trade",
+    "action": "on_status",
+    "version": "2.0.0",
+    "bapId": "procurement-portal-maju.ion.id",
+    "bapUri": "https://api.procurement.majuelektronik.co.id/beckn",
+    "bppId": "samsung-dist-indonesia.ion.id",
+    "bppUri": "https://api.samsung-distributor.co.id/beckn",
+    "networkId": "ion.id",
+    "transactionId": "55555555-5555-4555-8555-555555555555",
+    "messageId": "55555555-5555-4555-8555-555555555008",
+    "timestamp": "2026-05-21T09:30:00.000+07:00",
+    "ttl": "PT60S"
+  },
+  "message": {
+    "contract": {
+      "id": "66666666-6666-4666-8666-666666666666",
+      "status": {
+        "code": "ACTIVE",
+        "name": "Active"
+      },
+      "commitments": [
+        {
+          "id": "L01",
+          "status": {
+            "descriptor": {
+              "code": "ACTIVE"
+            }
+          },
+          "offer": {
+            "id": "OFFER-SAMS25-B2B-001",
+            "resourceIds": [
+              "SAMSUNG-S25-BASE"
+            ],
+            "provider": {
+              "id": "PROV-SAMSUNG-DIST-JKT-001",
+              "descriptor": {
+                "name": "PT Samsung Distributor Indonesia — B2B Wholesale Division"
+              }
+            }
+          },
+          "resources": [
+            {
+              "id": "SAMSUNG-S25-BASE",
+              "quantity": {
+                "count": 50
+              }
+            }
+          ]
+        }
+      ],
+      "performance": [
+        {
+          "id": "PERF-001",
+          "commitmentIds": [
+            "L01"
+          ],
+          "status": {
+            "code": "PACKED",
+            "name": "PACKED"
+          },
+          "performanceAttributes": {
+            "@context": "https://schema.ion.id/extensions/trade/performance/v1/context.jsonld",
+            "@type": "ion:TradePerformance",
+            "performanceMode": "DELIVERY",
+            "supportedPerformanceModes": [
+              "DELIVERY"
+            ],
+            "plannedQty": 30,
+            "plannedQtyUnit": "piece",
+            "proofOfDeliveryType": "SURAT_JALAN",
+            "stops": [
+              {
+                "type": "start",
+                "location": {
+                  "id": "LOC-SAMSUNG-WH-BEKASI-001",
+                  "gps": "-6.2349,107.0081"
+                }
+              },
+              {
+                "type": "end",
+                "location": {
+                  "address": {
+                    "building": "Gudang Maju Elektronik — Tangerang",
+                    "street": "Jl. Industri Raya No.45 Blok C",
+                    "city": "Tangerang",
+                    "areaCode": "15710"
+                  },
+                  "gps": "-6.1742,106.6410"
+                },
+                "contact": {
+                  "phone": "02155889900"
+                }
+              }
+            ],
+            "totalCartons": 6,
+            "totalWeightKg": 12.8,
+            "suratJalanRef": "SJ-SAMS-DIST-20260521-0007-P1",
+            "suratJalanIssuedAt": "2026-05-21T09:30:00.000+07:00",
+            "estimatedDeliveryDate": "2026-05-22",
+            "shippingProviderName": "JNE Freight",
+            "packagingNotes": "30 unit Samsung Galaxy S25, 5 unit per karton, bubble-wrap + foam padding. Tiap karton dilabeli PO-MAJU-2026-00841.",
+            "sla": {
+              "min": "P2D",
+              "max": "P3D",
+              "unitBasis": "ORDER_CONFIRMATION"
+            }
+          }
+        },
+        {
+          "id": "PERF-002",
+          "commitmentIds": [
+            "L01"
+          ],
+          "status": {
+            "code": "PLANNED",
+            "name": "PLANNED"
+          },
+          "performanceAttributes": {
+            "@context": "https://schema.ion.id/extensions/trade/performance/v1/context.jsonld",
+            "@type": "ion:TradePerformance",
+            "performanceMode": "DELIVERY",
+            "supportedPerformanceModes": [
+              "DELIVERY"
+            ],
+            "plannedQty": 20,
+            "plannedQtyUnit": "piece",
+            "proofOfDeliveryType": "SURAT_JALAN",
+            "stops": [
+              {
+                "type": "start",
+                "location": {
+                  "id": "LOC-SAMSUNG-WH-BEKASI-001",
+                  "gps": "-6.2349,107.0081"
+                }
+              },
+              {
+                "type": "end",
+                "location": {
+                  "address": {
+                    "building": "Gudang Maju Elektronik — Tangerang",
+                    "street": "Jl. Industri Raya No.45 Blok C",
+                    "city": "Tangerang",
+                    "areaCode": "15710"
+                  },
+                  "gps": "-6.1742,106.6410"
+                },
+                "contact": {
+                  "phone": "02155889900"
+                }
+              }
+            ],
+            "estimatedDeliveryDate": "2026-05-26",
+            "cancellableUntilStatus": "DISPATCHED",
+            "scheduledDispatchDate": "2026-05-25",
+            "sla": {
+              "min": "P5D",
+              "max": "P7D",
+              "unitBasis": "ORDER_CONFIRMATION"
+            }
+          }
+        }
+      ]
+    }
+  }
+}

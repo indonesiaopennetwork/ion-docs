@@ -1,0 +1,102 @@
+{
+  "_meta": {
+    "description": "B2B Business Procurement — catalog/publish. BPP publishes Samsung Galaxy S25 with a B2B-only offer: MOQ=10 units, four tiered bulk pricing levels, credit-net30 payment, Faktur Pajak, Surat Jalan proof of delivery. offer.visibility=VERIFIED_B2B_ONLY — pricing hidden until buyer passes NPWP+NIB verification. Same product resource as B2C; only the offer object differs.",
+    "pattern": "B2B-PP",
+    "step": "catalog/publish",
+    "sent_by": "BPP",
+    "received_by": "ION Network Registry",
+    "schemaPacks": [
+      "trade/resource/v1",
+      "trade/offer/v1",
+      "trade/provider/v1"
+    ]
+  },
+  "context": {
+    "domain": "ion:trade",
+    "action": "catalog/publish",
+    "version": "2.0.0",
+    "bppId": "samsung-dist-indonesia.ion.id",
+    "bppUri": "https://api.samsung-distributor.co.id/beckn",
+    "networkId": "ion.id",
+    "transactionId": "55555555-5555-4555-8555-555555555555",
+    "messageId": "55555555-5555-4555-8555-555555555001",
+    "timestamp": "2026-05-19T07:00:00.000+07:00",
+    "ttl": "PT24H",
+    "location": {
+      "country": {
+        "code": "IDN"
+      }
+    }
+  },
+  "message": {
+    "catalogs": [
+      {
+        "id": "CAT-SAMSUNG-DIST-B2B-001",
+        "descriptor": {
+          "name": "Samsung Distributor Indonesia B2B Catalog"
+        },
+        "bppId": "samsung-dist-indonesia.ion.id",
+        "bppUri": "https://api.samsung-distributor.co.id/beckn",
+        "provider": {
+          "id": "PROV-SAMSUNG-DIST-JKT-001",
+          "descriptor": {
+            "name": "PT Samsung Distributor Indonesia — B2B Wholesale Division",
+            "shortDesc": "Authorised Samsung wholesale distributor. MOQ applies. Faktur Pajak. NET 30 RTGS.",
+            "mediaFile": [
+              {
+                "uri": "https://cdn.samsung-dist.co.id/logo/samsung-dist-logo.png"
+              }
+            ]
+          },
+          "availableAt": [
+            {
+              "geo": {
+                "coordinates": [
+                  -6.2349,
+                  107.0081
+                ],
+                "type": "Point"
+              },
+              "address": {
+                "extendedAddress": "Kawasan Industri MM2100",
+                "streetAddress": "Jl. Irian Blok PP No.1",
+                "addressLocality": "Bekasi",
+                "postalCode": "17520"
+              }
+            }
+          ],
+          "providerAttributes": {
+            "@context": "https://raw.githubusercontent.com/indonesiaopennetwork/ion-specs/refs/heads/ion-launch/schema/core/v2/context.jsonld",
+            "@type": "ion:TradeProvider",
+            "storeStatus": "OPEN",
+            "operatingHours": [
+              {
+                "type": "ORDER",
+                "dayFrom": 1,
+                "dayTo": 5,
+                "timeFrom": "0830",
+                "timeTo": "1730"
+              }
+            ],
+            "invoicingModel": "CENTRAL",
+            "kycStatus": "APPROVED",
+            "nibRegistered": true,
+            "nibNumber": "9120300456789",
+            "npwp": "9876543210123456",
+            "pkpStatus": "PKP",
+            "providerCategory": "ELECTRONICS",
+            "holidayCalendar": [],
+            "kycLevel": "ENTERPRISE",
+            "kycValidUntil": "2027-12-31",
+            "invoicingEntity": "PT Samsung Distributor Indonesia"
+          }
+        },
+        "resources": [
+          {
+            "id": "SAMSUNG-S25-BASE"
+          }
+        ]
+      }
+    ]
+  }
+}
