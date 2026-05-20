@@ -52,8 +52,8 @@
             {
               "geo": {
                 "coordinates": [
-                  -6.2349,
-                  107.0081
+                  107.0081,
+                  -6.2349
                 ],
                 "type": "Point"
               },
@@ -93,7 +93,142 @@
         },
         "resources": [
           {
-            "id": "SAMSUNG-S25-BASE"
+            "id": "SAMSUNG-S25-BASE",
+            "descriptor": {
+              "name": "Samsung Galaxy S25 256GB Phantom Black",
+              "shortDesc": "B2B wholesale SKU for reseller and enterprise procurement"
+            },
+            "resourceAttributes": {
+              "@context": "https://schema.ion.id/extensions/trade/resource/v1/context.jsonld",
+              "@type": "ion:TradeResource",
+              "quantity": {
+                "value": 999,
+                "unit": "piece"
+              },
+              "resourceStructure": "VARIANT",
+              "parentResourceId": "SAMSUNG-S25-BASE",
+              "isDefaultVariant": false,
+              "variantGroup": {
+                "id": "SAMSUNG-S25",
+                "name": {
+                  "id": "Samsung Galaxy S25 Variant Family",
+                  "en": "Samsung Galaxy S25 Variant Family"
+                },
+                "variantOn": "storage"
+              },
+              "resourceTangibility": "PHYSICAL",
+              "images": [
+                "https://cdn.samsung-dist.co.id/galaxy-s25/primary.jpg"
+              ],
+              "logisticsServiceType": "DOMESTIC_SURFACE",
+              "availability": {
+                "status": "IN_STOCK"
+              },
+              "identity": {
+                "brand": "Samsung",
+                "model": "Galaxy S25",
+                "modelYear": 2026,
+                "sku": "SAM-S25-256-BLK"
+              },
+              "ageRestricted": false,
+              "countryOfOrigin": "KOR",
+              "merchantStory": {
+                "primaryUseCase": "Reseller procurement and managed enterprise device rollouts",
+                "commercialPositioning": "High-demand flagship SKU with consistent replenishment planning",
+                "afterSalesSupport": "Wholesale account manager plus Samsung-authorised warranty service"
+              }
+            }
+          }
+        ],
+        "offers": [
+          {
+            "id": "OFFER-SAMS25-B2B-001",
+            "resourceIds": [
+              "SAMSUNG-S25-BASE"
+            ],
+            "offerAttributes": {
+              "@context": "https://schema.ion.id/extensions/trade/offer/v1/context.jsonld",
+              "@type": "ion:TradeOffer",
+              "visibility": "VERIFIED_B2B_ONLY",
+              "minimumOrderQuantity": {
+                "count": 10
+              },
+              "pricingTiers": [
+                {
+                  "minQty": 10,
+                  "maxQty": 24,
+                  "unitPrice": 12490000,
+                  "currency": "IDR",
+                  "discountPct": 2,
+                  "tierLabel": "Tier 10-24 units"
+                },
+                {
+                  "minQty": 25,
+                  "maxQty": 49,
+                  "unitPrice": 12190000,
+                  "currency": "IDR",
+                  "discountPct": 5,
+                  "tierLabel": "Tier 25-49 units"
+                },
+                {
+                  "minQty": 50,
+                  "maxQty": 99,
+                  "unitPrice": 11520000,
+                  "currency": "IDR",
+                  "discountPct": 10,
+                  "tierLabel": "Tier 50-99 units"
+                },
+                {
+                  "minQty": 100,
+                  "unitPrice": 11190000,
+                  "currency": "IDR",
+                  "discountPct": 13,
+                  "tierLabel": "Tier 100+ units"
+                }
+              ],
+              "paymentTermsPolicy": "ion://policy/payment-terms.credit.net-30",
+              "grievanceSlaPolicy": "ion://policy/grievance-sla.b2b-businesshours",
+              "cancellationPolicy": "ion://policy/cancellation.b2b-restocking",
+              "returnable": true,
+              "returnPolicy": "ion://policy/return.electronics.14d-unopened-or-defective-sellerpays",
+              "warrantyPolicy": "ion://policy/warranty.manufacturer.1y-distance-service",
+              "disputePolicy": "ion://policy/dispute.commercial.bani",
+              "displayLanguage": [
+                "id",
+                "en"
+              ],
+              "contactDetailsConsumerCare": "Samsung B2B Indonesia,b2b@samsung-dist.co.id,021-5088-9900",
+              "proofOfDeliveryType": "OTP",
+              "availableOnCod": false,
+              "timeToShip": "P2D",
+              "partialFulfilmentAllowed": true,
+              "maxFulfilmentSplits": 2,
+              "supportedPerformanceModes": [
+                "DELIVERY"
+              ],
+              "indicativePerformanceProfiles": [
+                {
+                  "id": "PERF-001",
+                  "plannedQty": 30,
+                  "plannedQtyUnit": "piece",
+                  "sla": {
+                    "min": "P2D",
+                    "max": "P3D",
+                    "unitBasis": "ORDER_CONFIRMATION"
+                  }
+                },
+                {
+                  "id": "PERF-002",
+                  "plannedQty": 20,
+                  "plannedQtyUnit": "piece",
+                  "sla": {
+                    "min": "P5D",
+                    "max": "P7D",
+                    "unitBasis": "ORDER_CONFIRMATION"
+                  }
+                }
+              ]
+            }
           }
         ]
       }
