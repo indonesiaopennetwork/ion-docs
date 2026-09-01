@@ -21,7 +21,7 @@ More details on the new design can be [found here](https://docs.nfh.global/build
 
 ### Impact on ION participants.
 1. As mentioned above, to reduce friction for ION participants in staging,  ION was already creating the subscriber record on behalf of the NP within its own namespace. This will continue to work as before. So nothing needs to be changed by NP for staging operations. 
-2. When NPs need to go to production, they have an option to either create their subscriber record using the new file-based onboarding or use the dedi.global server to do it in an interactive way. ION will instruct the NP through the process at time of Key Creation for Production. 
+2. When NPs need to go to production, they will be provided with instructions to create their subscriber record using the new file-based onboarding.
 
 ## Self hosted catalog
 
